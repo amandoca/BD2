@@ -53,13 +53,13 @@ WHERE productScale > '1:10';
 
 /* customers */
 SELECT COUNT(*) FROM customers
-WHERE COUNTry = 'Germany';
+WHERE country = 'Germany';
 
 SELECT COUNT(*) FROM customers o 
 JOIN payments p on o.customerNumber = p.customerNumber
 WHERE o.customerNumber  = 'MA765515';
 
-SELECT creditLimit, postalCode, COUNTry FROM customers
+SELECT creditLimit, postalCode, country FROM customers
 WHERE phone IN
 (SELECT phone FROM customers
 WHERE phone > 5000000);
