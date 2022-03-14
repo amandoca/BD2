@@ -25,7 +25,7 @@ HAVING firstName = 'Leslie';
 SELECT jobTitle FROM employees;
 
 SELECT COUNT(*) FROM employees e
-JOIN offices o
+INNER JOIN offices o
 GROUP BY e.reportsTo, e.jobTitle, o.officeCode
 HAVING officeCode < 5;
 
@@ -56,7 +56,7 @@ SELECT COUNT(*) FROM customers
 WHERE country = 'Germany';
 
 SELECT COUNT(*) FROM customers o 
-JOIN payments p on o.customerNumber = p.customerNumber
+INNER JOIN payments p on o.customerNumber = p.customerNumber
 WHERE o.customerNumber  = 'MA765515';
 
 SELECT creditLimit, postalCode, country FROM customers
@@ -91,7 +91,7 @@ SELECT MIN(comments) FROM orders;
 SELECT AVG(orderDate) FROM orders;
 
 SELECT COUNT(*) FROM orders o 
-JOIN orderDetails c on o.orderNumber = c.orderNumber
+INNER JOIN orderDetails c on o.orderNumber = c.orderNumber
 WHERE o.orderNumber = 10103;
 
 /* orderdetails */
